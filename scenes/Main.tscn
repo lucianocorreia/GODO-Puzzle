@@ -1,39 +1,43 @@
-[gd_scene load_steps=7 format=4 uid="uid://bc7libqm2fub7"]
+[gd_scene load_steps=7 format=4 uid="uid://bipxsk1snp5nq"]
 
-[ext_resource type="Script" uid="uid://b8y8ptdj1xi54" path="res://scenes/Main.cs" id="1_elqb8"]
-[ext_resource type="TileSet" uid="uid://b7r5ytngknvkt" path="res://resources/tiles.tres" id="2_0bbpv"]
-[ext_resource type="PackedScene" uid="uid://d4krsf2wgn0d8" path="res://manager/GridManager.tscn" id="2_rarhs"]
-[ext_resource type="TileSet" uid="uid://ctxbsaeny2y0c" path="res://resources/highlight_tileset.tres" id="2_rvslj"]
-[ext_resource type="PackedScene" uid="uid://cijyxgea71dec" path="res://scenes/building/Base.tscn" id="5_vcsgt"]
+[ext_resource type="Script" uid="uid://6813afh28hs3" path="res://scenes/Main.cs" id="1_oetcv"]
+[ext_resource type="TileSet" uid="uid://be2deub8k3gjr" path="res://resources/highlight_tileset.tres" id="2_8gl76"]
+[ext_resource type="PackedScene" uid="uid://b7d1hhincgf58" path="res://scenes/manager/GridManager.tscn" id="2_46an4"]
+[ext_resource type="TileSet" uid="uid://dvqwr0ci0x55u" path="res://resources/tiles.tres" id="2_ik0op"]
+[ext_resource type="PackedScene" uid="uid://cv6tnl0bv6sfg" path="res://scenes/building/Base.tscn" id="5_xjsmf"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_elqb8"]
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_vm55g"]
 size = Vector2(64, 64)
 
 [node name="Main" type="Node"]
-script = ExtResource("1_elqb8")
+script = ExtResource("1_oetcv")
 
-[node name="GridManager" parent="." node_paths=PackedStringArray("highlightTileMapLayer", "baseTerrainTileMapLayer") instance=ExtResource("2_rarhs")]
-highlightTileMapLayer = NodePath("../HighLightTileMapLayer")
-baseTerrainTileMapLayer = NodePath("../BaseTerrainTileMapLayer")
+[node name="GridManager" parent="." node_paths=PackedStringArray("highlightTilemapLayer", "baseTerrainTilemapLayer") instance=ExtResource("2_46an4")]
+highlightTilemapLayer = NodePath("../HighlightTileMapLayer")
+baseTerrainTilemapLayer = NodePath("../BaseTerrainTileMapLayer")
 
 [node name="BaseTerrainTileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAACAAIAAAAFAAMAAAADAAIAAAAGAAAAAAAEAAIAAAAHAAAAAAAEAAMAAAAGAAEAAAADAAMAAAAFAAEAAAADAAQAAAAFAAEAAAADAAUAAAAFAAEAAAADAAYAAAAFAAIAAAAEAAYAAAAGAAIAAAAFAAYAAAAGAAEAAAAGAAYAAAAGAAEAAAAHAAYAAAAGAAEAAAAIAAYAAAAHAAEAAAAIAAUAAAAGAAAAAAAHAAUAAAAGAAAAAAAGAAUAAAAGAAAAAAAFAAUAAAAGAAEAAAAEAAUAAAAGAAEAAAAEAAQAAAAGAAEAAAAFAAQAAAAHAAEAAAAFAAMAAAAGAAAAAAAGAAMAAAAGAAMAAAAHAAMAAAAHAAIAAAAHAAIAAAAFAAAAAAAIAAIAAAAGAAMAAAAJAAIAAAAGAAMAAAAKAAIAAAAHAAEAAAAKAAEAAAAFAAAAAAALAAEAAAAGAAMAAAAMAAEAAAAGAAMAAAANAAEAAAAHAAAAAAANAAIAAAAIAAEAAAANAAMAAAAIAAEAAAANAAQAAAAHAAEAAAANAAUAAAAHAAEAAAANAAYAAAAIAAEAAAAJAAUAAAAHAAIAAAAJAAQAAAAFAAAAAAAKAAQAAAAGAAIAAAAKAAMAAAAIAAEAAAALAAQAAAAGAAAAAAALAAUAAAAFAAIAAAAMAAUAAAAGAAIAAAAMAAQAAAAGAAAAAAAIAAcAAAAHAAEAAAAIAAgAAAAGAAEAAAAIAAkAAAAFAAEAAAAIAAoAAAAFAAIAAAAJAAoAAAAHAAIAAAAJAAkAAAAGAAEAAAAKAAkAAAAGAAIAAAALAAkAAAAHAAIAAAAMAAgAAAAGAAIAAAANAAgAAAAHAAIAAAANAAcAAAAHAAEAAAAMAAcAAAAFAAAAAAALAAgAAAAGAAAAAAAKAAgAAAAGAAAAAAAJAAgAAAAGAAAAAAAHAAcAAAAGAAEAAAAGAAcAAAAGAAEAAAAFAAcAAAAFAAEAAAAFAAgAAAAFAAIAAAAGAAgAAAAGAAIAAAAHAAgAAAAGAAIAAAA=")
-tile_set = ExtResource("2_0bbpv")
+tile_map_data = PackedByteArray("AAACAAQAAAAFAAEAAAACAAUAAAAFAAEAAAACAAYAAAAFAAEAAAADAAYAAAAGAAEAAAAEAAYAAAAGAAEAAAAFAAYAAAAGAAEAAAAGAAYAAAAGAAEAAAAHAAYAAAAGAAEAAAAIAAYAAAAGAAEAAAAJAAYAAAAGAAIAAAAKAAYAAAAGAAIAAAALAAYAAAAGAAEAAAALAAUAAAAGAAEAAAAMAAUAAAAGAAEAAAAMAAQAAAAGAAEAAAALAAQAAAAGAAEAAAALAAMAAAAGAAEAAAAKAAMAAAAGAAEAAAAJAAQAAAAGAAEAAAAIAAQAAAAGAAEAAAAHAAQAAAAGAAEAAAAGAAQAAAAGAAEAAAAFAAQAAAAGAAEAAAAEAAQAAAAGAAEAAAADAAQAAAAGAAEAAAADAAUAAAAGAAEAAAAEAAUAAAAGAAEAAAAFAAUAAAAGAAEAAAAGAAUAAAAGAAEAAAAHAAUAAAAGAAEAAAAIAAUAAAAGAAEAAAAJAAUAAAAGAAEAAAAKAAUAAAAGAAEAAAAKAAQAAAAGAAEAAAAJAAMAAAAGAAEAAAAIAAMAAAAGAAEAAAAHAAMAAAAGAAEAAAAGAAMAAAAGAAEAAAAFAAMAAAAGAAEAAAAEAAMAAAAGAAEAAAADAAMAAAAGAAAAAAACAAMAAAAFAAAAAAALAAcAAAAFAAEAAAAMAAcAAAAGAAEAAAAMAAgAAAAGAAIAAAANAAgAAAAGAAIAAAALAAgAAAAFAAIAAAAMAAYAAAAGAAEAAAANAAUAAAAGAAEAAAANAAYAAAAGAAEAAAANAAcAAAAGAAEAAAAOAAcAAAAGAAEAAAAOAAYAAAAGAAEAAAAPAAcAAAAHAAEAAAAPAAgAAAAHAAIAAAAOAAgAAAAGAAIAAAAPAAYAAAAHAAAAAAAOAAUAAAAHAAEAAAAOAAQAAAAHAAEAAAAOAAMAAAAHAAEAAAAOAAIAAAAHAAAAAAANAAIAAAAGAAAAAAAMAAIAAAAGAAAAAAALAAIAAAAGAAEAAAALAAEAAAAHAAAAAAAKAAEAAAAGAAAAAAAJAAEAAAAGAAAAAAAJAAIAAAAGAAEAAAAIAAIAAAAGAAEAAAAHAAIAAAAGAAEAAAAGAAIAAAAGAAAAAAAFAAIAAAAGAAAAAAAHAAEAAAAFAAAAAAAIAAEAAAAGAAAAAAAEAAIAAAAFAAAAAAAHAAcAAAAGAAEAAAAGAAcAAAAGAAEAAAAFAAcAAAAGAAEAAAAEAAcAAAAGAAIAAAACAAcAAAAFAAIAAAADAAcAAAAGAAIAAAAFAAgAAAAFAAIAAAAGAAgAAAAGAAIAAAAHAAgAAAAHAAIAAAAIAAcAAAAHAAIAAAANAAQAAAAGAAEAAAANAAMAAAAGAAEAAAAMAAMAAAAGAAEAAAAKAAIAAAAGAAEAAAA=")
+tile_set = ExtResource("2_ik0op")
 
-[node name="HighLightTileMapLayer" type="TileMapLayer" parent="."]
-modulate = Color(1, 1, 1, 0.419608)
-tile_set = ExtResource("2_rvslj")
+[node name="ResourceTileMapLayer" type="TileMapLayer" parent="BaseTerrainTileMapLayer"]
+tile_map_data = PackedByteArray("AAAKAAIAAQAAAAAAAAAIAAIAAQAAAAAAAAAJAAEAAQAAAAAAAAAJAAMAAQAAAAAAAAAKAAMAAQAAAAAAAAALAAIAAQAAAAAAAAAHAAEAAQAAAAAAAAA=")
+tile_set = ExtResource("2_ik0op")
+
+[node name="HighlightTileMapLayer" type="TileMapLayer" parent="."]
+modulate = Color(1, 1, 1, 0.486275)
+tile_set = ExtResource("2_8gl76")
 
 [node name="Cursor" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_elqb8")
+texture = SubResource("PlaceholderTexture2D_vm55g")
 centered = false
 
 [node name="PlaceBuildingButton" type="Button" parent="."]
-offset_left = 8.0
-offset_top = 680.0
-offset_right = 125.0
-offset_bottom = 711.0
+offset_left = 4.0
+offset_top = 683.0
+offset_right = 121.0
+offset_bottom = 714.0
 text = "Place Building"
 
-[node name="Base" parent="." instance=ExtResource("5_vcsgt")]
-position = Vector2(384, 384)
+[node name="Base" parent="." instance=ExtResource("5_xjsmf")]
+position = Vector2(448, 320)
