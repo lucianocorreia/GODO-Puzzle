@@ -16,7 +16,6 @@ public partial class GridManager : Node
     [Export]
     private TileMapLayer baseTerrainTilemapLayer;
 
-
     public override void _Ready()
     {
         GameEvents.Instance.BuildingPlaced += OnBuildingPlaced;
